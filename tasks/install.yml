@@ -30,14 +30,14 @@
 
 - name: Criando o script de inicialização do serviço.
   template:
-    src: exporter.service.j2
-    dest: /etc/systemd/system/exporter.service
+    src: node_exporter.service.j2
+    dest: /etc/systemd/system/node_exporter.service
     owner: root
     group: root
     mode: 0644
 
 - name: Inicializando o serviço.
   systemd:
-    name: exporter.service
+    name: node_exporter.service
     state: started
     enabled: yes
