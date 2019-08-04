@@ -1,0 +1,8 @@
+---
+- name: Criando o usuário 'exporter'.
+  user:
+    name: exporter
+    comment: Node Exporter
+    shell: /sbin/nologin
+    state: present
+    create_home: no

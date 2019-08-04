@@ -1,0 +1,16 @@
+[Unit]
+Description=Prometheus Linux Node Exporter
+Documentation=https://github.com/prometheus/node_exporter
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=exporter
+Group=exporter
+Type=simple
+Restart=on-failure
+
+ExecStart=/usr/bin/node_exporter --web.listen-address=:{{ node_exporter_port }}
+
+[Install]
+WantedBy=default.target

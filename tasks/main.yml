@@ -1,0 +1,9 @@
+---
+- name: Cria o usuário exporter.
+  include_tasks: user.yml
+
+- name: Download e instalação do Node Exporter.
+  include_tasks: install.yml
+
+- name: Abre a porta do serviço no firewall.
+  include_tasks: firewall.yml

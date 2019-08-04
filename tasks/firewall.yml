@@ -1,0 +1,19 @@
+---
+- name: Verificando se o firewall está em execução
+  service_facts:
+  register: service_state
+
+- debug:
+    msg: "O serviço firewalld está parado."
+  when: service_state.ansible_facts.services["firewalld.service"].state == "stopped"
+
+- debug:
+    msg: "O serviço firewalld está em execução."
+  when: service_state.ansible_facts.services["firewalld.service"].state == "running"
+
+- name: Liberando a porta {{ node_exporter_port }} no firewall.
+  firewalld:
+    port: "{{ node_exporter_port }}/tcp"
+    state: enabled
+    permanent: yes
+  when: service_state.ansible_facts.services["firewalld.service"].state == "running"
