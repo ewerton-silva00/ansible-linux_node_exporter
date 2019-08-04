@@ -5,8 +5,8 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-User=exporter
-Group=exporter
+User={{ node_exporter_user }}
+Group={{ node_exporter_user }}
 Type=simple
 Restart=on-failure
 

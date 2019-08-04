@@ -1,8 +1,8 @@
 ---
-- name: Criando o usuário 'exporter'.
+- name: Criando o usuário {{ node_exporter_user }}.
   user:
-    name: exporter
-    comment: Node Exporter
+    name: "{{ node_exporter_user }}"
+    comment: Prometheus Node Exporter
     shell: /sbin/nologin
     state: present
     create_home: no

@@ -8,9 +8,17 @@ Role Variables
 
 Esta role utiliza as variáveis abaixo:
 ```  
-  node_exporter_version: 0.18.1
-  node_exporter_port: 9100
-  hash_node_exporter: b2503fd932f85f4e5baf161268854bf5d22001869b84f00fd2d1f57b51b72424
+# Versão do Node Exporter.
+node_exporter_version: 0.18.1
+
+# Porta TCP a ser utilizada.
+node_exporter_port: 9100
+
+# Hash SHA256 disponível em https://prometheus.io/download/
+node_exporter_hash: b2503fd932f85f4e5baf161268854bf5d22001869b84f00fd2d1f57b51b72424
+
+# Usuário que será criado para execução do serviço node_exporter.service
+node_exporter_user: exporter
 ```
 
 > Os valores acima serão usados por default.
