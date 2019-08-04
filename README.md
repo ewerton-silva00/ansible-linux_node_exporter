@@ -15,6 +15,7 @@ node_exporter_version: 0.18.1
 node_exporter_port: 9100
 
 # Hash SHA256 disponível em https://prometheus.io/download/
+# A hash precisa corresponder a versão do Node Exporter a ser instalado.
 node_exporter_hash: b2503fd932f85f4e5baf161268854bf5d22001869b84f00fd2d1f57b51b72424
 
 # Usuário que será criado para execução do serviço node_exporter.service
