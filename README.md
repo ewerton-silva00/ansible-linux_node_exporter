@@ -1,4 +1,4 @@
-Role Name
+linux_node_exporter
 =========
 
 Role destinada a instalar e configurar o **Prometheus Node Exporter** no CentOS 7.x
